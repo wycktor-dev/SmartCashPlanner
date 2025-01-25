@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@prisma/client": "^6.2.1",
     "bootstrap": "^5.3.3",
     "cors": "^2.8.5",
     "next": "15.1.5",
