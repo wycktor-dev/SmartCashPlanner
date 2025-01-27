@@ -19,7 +19,7 @@ const Home: React.FC = () => {
 
   async function test() {
     try {
-      const response = await fetch("/pages/teste"); // Faz a chamada para a API
+      const response = await fetch("/api/users"); // Faz a chamada para a API
       const data = await response.json();
       setUsers(data); // Armazena os usuários no estado
       console.log(data);
