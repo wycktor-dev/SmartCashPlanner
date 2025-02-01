@@ -9,17 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@prisma/adapter-pg": "^6.3.0",
     "@prisma/client": "^6.2.1",
     "bootstrap": "^5.3.3",
     "cors": "^2.8.5",
     "next": "15.1.5",
+    "pg": "^8.13.1",
     "react": "^19.0.0",
     "react-bootstrap": "^2.10.8",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@types/next": "^8.0.7",
     "@types/node": "^20.17.14",
+    "@types/pg": "^8.11.11",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
@@ -27,5 +31,8 @@
     "prisma": "^6.2.1",
     "tsx": "^4.19.2",
     "typescript": "^5.7.3"
+  },
+  "prisma": {
+    "schema": "src/server/prisma/schema/public.prisma"
   }
 }
