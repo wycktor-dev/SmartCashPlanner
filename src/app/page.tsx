@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import ClientLayout from "./layouts/ClientLayout";
@@ -9,38 +8,46 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 // Next css
 import styles from "./styles/page.module.css";
-
 import Button from "react-bootstrap/Button";
-import { useState } from "react";
+
+import { useEffect, useState } from "react";
+
+export interface IUsers {
+  id: number;
+  name: string;
+  email: string;
+  password: string;
+  createdAt: string;
+  updatedAt: string;
+}
 
 const Home: React.FC = () => {
+  const [users, setUsers] = useState<IUsers[]>([]);
 
-  const [users, setUsers] = useState([]);
+  const fetchUsers = async () => {
+    const response = await fetch("/api/users");
+    const data = await response.json();
+    const users = data.users;
+    setUsers(users);
+  };
 
-  async function test() {
-    try {
-      const response = await fetch("/pages/teste"); // Faz a chamada para a API
-      const data = await response.json();
-      setUsers(data); // Armazena os usuários no estado
-      console.log(data);
-    } catch (error) {
-      console.error("Erro ao buscar usuários:", error);
-    }
-  }
+  useEffect(() => {
+    fetchUsers();
+  }, []);
+
   return (
     <RootLayout>
       <ClientLayout>
         <div>
           <h1>Home do Sistema</h1>
-          <Button onClick={test} size="lg">Teste</Button>
-          <div>
-            <h2>Usuários:</h2>
+          <Button size="lg">Teste</Button>
+          {users.length > 0 && (
             <ul>
-              {users.map((user: any) => (
-                <li key={user.id}>{user.name}</li> // Ajuste os campos conforme o modelo User
+              {users.map(user => (
+                <li key={user.id}>{user.name}</li>
               ))}
             </ul>
-          </div>
+          )}
         </div>
       </ClientLayout>
     </RootLayout>
