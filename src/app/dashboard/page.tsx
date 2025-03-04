@@ -5,13 +5,13 @@ import RootLayout from '@/app/layouts/RootLayout';
 import React from 'react';
 import { Navbar, Container, Nav, Card, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { NavegationBar } from '../components/NavegationBar';
+import { NavigationBar } from '../components/NavigationBar';
 
 const Dashboard: React.FC = () => {
     return (
         <RootLayout>
             <ClientLayout>
-                <NavegationBar></NavegationBar>
+                <NavigationBar></NavigationBar>
                 <Container fluid className="mt-4" style={{ paddingLeft: '20px', paddingRight: '20px' }}>
                     <Row>
                         <Col md={4}>

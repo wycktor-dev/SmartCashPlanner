@@ -1,6 +1,6 @@
 import { Container, Nav, Navbar } from "react-bootstrap"
 
-const NavegationBar: React.FC = () => {
+const NavigationBar: React.FC = () => {
 
 return (
     <Navbar bg="light" expand="lg">
@@ -20,4 +20,4 @@ return (
 )
 }
 
-export { NavegationBar }
+export { NavigationBar }
