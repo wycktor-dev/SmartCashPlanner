@@ -11,6 +11,7 @@ import styles from "./styles/page.module.css";
 import Button from "react-bootstrap/Button";
 
 import { useEffect, useState } from "react";
+import { NavegationBar } from "./components/NavegationBar";
 
 export interface IUsers {
   id: number;
@@ -38,6 +39,7 @@ const Home: React.FC = () => {
   return (
     <RootLayout>
       <ClientLayout>
+      <NavegationBar></NavegationBar>
         <div>
           <h1>Home do Sistema</h1>
           <Button size="lg">Teste</Button>
